@@ -1,0 +1,12 @@
+<h1>Welcome to your {{store.name}} </h1>
+<h2>You have the following items ready for purchase</h2>
+{{#each store.products}}
+<div class="card" style="width: 18rem;">
+
+    <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">Price: $ {{price}}</p>
+        <a href="/stores/{{../store._id}}/products/{{_id}}" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
+{{/each}}
