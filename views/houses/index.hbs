@@ -1,0 +1,9 @@
+<h1>Review a House</h1>
+<div class="card" style="width: 18rem;">
+{{#each houses}}
+    <div class="card-body">
+        <h5 class="card-title">{{address}}</h5>
+        <a href="/neighborhoods/{{_id}}/houses/{{_id}}" class="btn btn-primary">See this House</a>
+    </div>
+</div>
+{{/each}}

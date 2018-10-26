@@ -7,15 +7,15 @@ const housesController = {
         Neighborhoods.findById(neighborhoodsId).populate(`houses`)
             .then(neighborhoods => {
                 const houses = neighborhoods.houses
-                res.send(houses)
+                res.render('houses/index', {houses: houses})
             })
     },
     show: (req, res) => {
         const housesId = req.params.housesId
         Houses.findById(housesId)
-            .then(houss => {
+            .then(houses => {
                 res.render('houses/show',{
-                    houss: houss
+                    houses: houses
                 })
             })
     },

@@ -1,9 +1,10 @@
+<h1>{{address}</h1>
 <div class="card" style="width: 18rem;">
-{{#each houss}}
+    <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-        <h5 class="card-title">{{houses.address}}</h5>
-        <p class="card-text">This house is priced at $ {{houses.streetlight}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5>{{candy}}</h5>
+        <h5>{{streetlight}}</h5>
+        <a href="#" class="btn btn-primary">Edit this House</a>
+        <a href="/neighborhoods/{{_id}}/houses" class="btn btn-primary">Return to the Houses</a>
     </div>
 </div>
-{{/each}}
