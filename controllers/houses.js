@@ -1,10 +1,58 @@
-const neighborhoods = require('../models/Neighborhood')
-const houses = require('../models/Houses')
+const Neighborhoods = require('../models/Neighborhoods')
+const Houses = require('../models/Houses')
 
-const userController = {
+const housesController = {
     index: (req, res) => {
-        res.send("Hey whats up this is app index")
+        const neighborhoodsId = req.params.neighborhoodsId
+        Neighborhoods.findById(neighborhoodsId).populate(`houses`)
+            .then(neighborhoods => {
+                const houses = neighborhoods.houses
+                res.send(houses)
+            })
+    },
+    show: (req, res) => {
+        const housesId = req.params.housesId
+        Houses.findById(housesId)
+            .then(product => {
+                res.send(product)
+            })
+    },
+    create: (req, res) => {
+        const neighborhoodsId = req.params.neighborhoodsId
+        Neighborhoods.findById(neighborhoodsId)
+            .then(neighborhoods => {
+                const houses = neighborhoods.houses
+                Houses.create(req.body)
+                    .then(newHouse => {
+                        houses.push(newHouse)
+                        neighborhoods.save()
+                        res.redirect(`/stores/${neighborhoodsId}`)
+                    })
+
+            })
+    },
+    delete: (req, res) => {
+        const neighborhoodsId = req.params.neighborhoodsId
+        const housesId = req.params.housesId
+        Houses.findByIdAndDelete(housesId)
+            .then(() => {
+                res.redirect(`/neighborhoods/${neighborhoodsId}`)
+            })
+    },
+    update: (req, res) => {
+        const neighborhoodsId = req.params.neighborhoodsId
+        const housesId = req.params.housesId
+        Houses.findByIdAndUpdate(housesId, req.body)
+            .then(neighborhoods => {
+                res.redirect(`/neighborhoods/${neighborhoodsId}/houses/${housesId}`)
+            })
+    },
+    new: (req, res) => {
+        res.send(`Hello from Houses New route`)
+    },
+    edit: (req, res) => {
+        res.send(`Hello from Houses Edit route`)
     }
 }
 
-module.exports = userController
+module.exports = housesController
