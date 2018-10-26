@@ -2,8 +2,9 @@ const mongoose = require('../db/connections')
 const Schema = mongoose.Schema
 
 const Houses = new Schema({
-    name: String,
-    price: Number,
+    address: String,
+    candy: Boolean,
+    streetlight: Boolean
 })
 
 module.exports = mongoose.model('Houses', Houses)
