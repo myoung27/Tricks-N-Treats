@@ -1,11 +1,11 @@
-
-const neighborhoods = require('../models/Neighborhoods')
-const houses = require('../models/Houses')
+const neighborhoods = require("../models/Neighborhoods");
+const houses = require("../models/Houses");
+const user = require("../models/User");
 
 const userController = {
-    index: (req, res) => {
-        res.send("Hey whats up this is app index")
-    }
-}
+  index: (req, res) => {
+    res.render('users/index');
+  }
+};
 
-module.exports = userController
+module.exports = userController;

@@ -13,8 +13,8 @@ const housesController = {
     show: (req, res) => {
         const housesId = req.params.housesId
         Houses.findById(housesId)
-            .then(product => {
-                res.send(product)
+            .then(houses => {
+                res.send(houses)
             })
     },
     create: (req, res) => {
@@ -26,7 +26,7 @@ const housesController = {
                     .then(newHouse => {
                         houses.push(newHouse)
                         neighborhoods.save()
-                        res.redirect(`/stores/${neighborhoodsId}`)
+                        res.redirect(`/neighborhoods/${neighborhoodsId}`)
                     })
 
             })

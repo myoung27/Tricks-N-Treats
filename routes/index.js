@@ -11,21 +11,21 @@ router.get('/neighborhoods', neighborhoodsController.index)
 router.get('/neighborhoods/new', neighborhoodsController.new)
 router.get('/neighborhoods/:neighborhoodsId/edit', neighborhoodsController.edit)
 router.get('/neighborhoods/:neighborhoodsId', neighborhoodsController.show)
-router.get('/neighborhoods/:neighborhoodsId/products', housesController.index)
-router.get('/neighborhoods/:neighborhoodsId/products/new', housesController.new)
-router.get('/neighborhoods/:neighborhoodsId/products/:productId', housesController.show)
-router.get('/neighborhoods/:neighborhoodsId/products/:productId/edit', housesController.edit)
+router.get('/neighborhoods/:neighborhoodsId/houses', housesController.index)
+router.get('/neighborhoods/:neighborhoodsId/houses/new', housesController.new)
+router.get('/neighborhoods/:neighborhoodsId/houses/:housesId', housesController.show)
+router.get('/neighborhoods/:neighborhoodsId/houses/:housesId/edit', housesController.edit)
 
 //create routes
 router.post('/neighborhoods', neighborhoodsController.create)
-router.post('/neighborhoods/:neighborhoodsId/products', housesController.create)
+router.post('/neighborhoods/:neighborhoodsId/houses', housesController.create)
 
 //delete routes 
 router.delete('/neighborhoods/:neighborhoodsId', neighborhoodsController.delete)
-router.delete('/neighborhoods/:neighborhoodsId/products/:productId', housesController.delete)
+router.delete('/neighborhoods/:neighborhoodsId/houses/:housesId', housesController.delete)
 
 //update routes 
 router.patch('/neighborhoods/:neighborhoodsId', neighborhoodsController.update)
-router.patch('/neighborhoods/:neighborhoodsId/products/:productId', housesController.update)
+router.patch('/neighborhoods/:neighborhoodsId/houses/:housesId', housesController.update)
 
 module.exports = router
