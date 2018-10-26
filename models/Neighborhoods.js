@@ -11,4 +11,4 @@ const Neighborhood = new Schema({
     ]
 })
 
-module.exports = mongoose.model('Neighborhood', Neighborhood)
+module.exports = mongoose.model('Neighborhoods', Neighborhood)

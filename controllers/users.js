@@ -1,5 +1,5 @@
 
-const neighborhoods = require('../models/Neighborhood')
+const neighborhoods = require('../models/Neighborhoods')
 const houses = require('../models/Houses')
 
 const userController = {

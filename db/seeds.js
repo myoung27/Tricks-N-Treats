@@ -1,4 +1,4 @@
-const Neighborhood = require('../models/Neighborhood.js')
+const Neighborhood = require('../models/Neighborhoods.js')
 const Houses = require('../models/Houses.js')
 const mongoose = require('./connections')
 
