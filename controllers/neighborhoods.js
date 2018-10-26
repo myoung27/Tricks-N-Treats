@@ -4,14 +4,18 @@ const neighborhoodsController = {
     index: (req, res) => {
         Neighborhoods.find({}).populate(`houses`)
             .then(neighborhoods => {
-                res.render('neighborhoods/index')
+                res.render('neighborhoods/index', {
+                    neighborhoods: neighborhoods
+                })
             })
     },
     show: (req, res) => {
         const neighborhoodsId = req.params.neighborhoodsId
         Neighborhoods.findById(neighborhoodsId).populate(`houses`)
             .then((singleNeighborhood) => {
-                res.render('neighborhoods/show')
+                res.render('neighborhoods/show', {
+                    neighborhoods: neighborhoods
+                })
             })
     },
     create: (req, res) => {
