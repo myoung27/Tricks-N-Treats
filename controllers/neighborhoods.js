@@ -12,9 +12,10 @@ const neighborhoodsController = {
     show: (req, res) => {
         const neighborhoodsId = req.params.neighborhoodsId
         Neighborhoods.findById(neighborhoodsId).populate(`houses`)
-            .then((singleNeighborhood) => {
+            .then((single) => {
                 res.render('neighborhoods/show', {
-                    neighborhoods: neighborhoods
+                    single: single
+                    
                 })
             })
     },

@@ -13,8 +13,10 @@ const housesController = {
     show: (req, res) => {
         const housesId = req.params.housesId
         Houses.findById(housesId)
-            .then(houses => {
-                res.send(houses)
+            .then(houss => {
+                res.render('houses/show',{
+                    houss: houss
+                })
             })
     },
     create: (req, res) => {

@@ -4,7 +4,7 @@ const mongoose = require('./connections')
 
 const l5p1 = new Houses({
     address: "123 Sesame St. NE",
-    price: true,
+    candy: true,
     streetlight: true
 })
 
