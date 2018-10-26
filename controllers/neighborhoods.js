@@ -1,23 +1,45 @@
-const Store = require('../models/Store')
-const Product = require('../models/Product')
+const Neighborhoods = require(`../models/Neighborhoods`)
 
-const productController = {
+const neighborhoodsController = {
     index: (req, res) => {
-        const storeId = req.params.storesId
-        Store.findById(storeId).populate(`products`)
-            .then(store => {
-                console.log("STORE", store)
-                const products = store.products
-                res.send(products)
+        Neighborhoods.find({}).populate(`houses`)
+            .then(neighborhoods => {
+                res.send(neighborhoods)
             })
     },
     show: (req, res) => {
-        const productId = req.params.productsId
-        Product.findById(productId)
-            .then(product => {
-                res.send(product)
+        const neighborhoodsId = req.params.neighborhoodsId
+        Neighborhoods.findById(neighborhoodsId).populate(`houses`)
+            .then((singleNeighborhood) => {
+                res.send(singleNeighborhood)
             })
+    },
+    create: (req, res) => {
+        Neighborhoods.create(req.body)
+            .then(() => {
+                res.redirect(`/neighborhoods`)
+            })
+    },
+    delete: (req, res) => {
+        const neighborhoodsId = req.params.neighborhoodsId
+        Neighborhoods.findByIdAndDelete(neighborhoodsId)
+            .then(() => {
+                res.redirect(`/neighborhoods`)
+            })
+    },
+    update: (req, res) => {
+        const neighborhoodsId = req.params.neighborhoodsId
+        Neighborhoods.findByIdAndUpdate(neighborhoodsId, req.body)
+            .then((neighborhoods) => {
+                res.redirect(`/neighborhoods/${neighborhoods.id}`)
+            })
+    },
+    new: (req, res) => {
+        res.send(`Hello from Stores New route`)
+    },
+    edit: (req, res) => {
+        res.send(`Hellow from Stores Edit route`)
     }
 }
 
-module.exports = productController
+module.exports = neighborhoodsController
