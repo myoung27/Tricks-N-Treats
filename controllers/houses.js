@@ -14,6 +14,8 @@ const housesController = {
             })
     },
     show: (req, res) => {
+        const neighborhoodsId = req.params.neighborhoodsId
+        Neighborhoods.findById(neighborhoodsId).populate(`houses`)
         const housesId = req.params.housesId
         Houses.findById(housesId)
             .then(houses => {
@@ -31,10 +33,7 @@ const housesController = {
                     .then(newHouse => {
                         houses.push(newHouse)
                         neighborhoods.save()
-                        res.redirect(`/neighborhoods/${neighborhoodsId}/houses/`, {
-                            houses: houses,
-                            neighborhoods: neighborhoods
-                        })
+                        res.redirect(`/neighborhoods/${neighborhoodsId}/houses/`)
                     })
 
             })
