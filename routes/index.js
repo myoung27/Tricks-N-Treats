@@ -13,12 +13,13 @@ router.get('/neighborhoods/:neighborhoodsId/edit', neighborhoodsController.edit)
 router.get('/neighborhoods/:neighborhoodsId', neighborhoodsController.show)
 router.get('/neighborhoods/:neighborhoodsId/houses', housesController.index)
 router.get('/neighborhoods/:neighborhoodsId/houses/new', housesController.new)
+router.post('/neighborhoods/:neighborhoodsId/houses', housesController.create)
 router.get('/neighborhoods/:neighborhoodsId/houses/:housesId', housesController.show)
 router.get('/neighborhoods/:neighborhoodsId/houses/:housesId/edit', housesController.edit)
 
 //create routes
-router.post('/neighborhoods', neighborhoodsController.create)
-router.post('/neighborhoods/:neighborhoodsId/houses', housesController.create)
+//router.post('/neighborhoods', neighborhoodsController.create)
+
 
 //delete routes 
 router.delete('/neighborhoods/:neighborhoodsId', neighborhoodsController.delete)

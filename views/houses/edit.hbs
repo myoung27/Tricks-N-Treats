@@ -1,17 +1,18 @@
 <div id='edit-form' class="user container-show">
-  <form action="/neighborhoods/{{neighborhoods.id}}/houses?_method=PATCH" method="GET" class="auth-form">
+  <h1>{{home.address}}</h1>
+  {{neighborhoods}}
+  <form action="/neighborhoods/{{home._id}}/houses/{{home._id}}?_method=PATCH" method="POST" class="auth-form">
     <div class="form-group">
       <label for="address">House Address</label>
-      <input type="text" name="address" class="form-control" id="address" placeholder="{{address}}">
-
+      <input type="text" name="address" class="form-control" id="address" value="{{home.address}}">
     </div>
     <div class="form-group">
       <label for="candy">Does this house give out candy?</label>
-      <input type="text" name="candy" class="form-control" id="candy" placeholder="{{candy}}">
+      <input type="text" name="candy" class="form-control" id="candy" value="{{home.candy}}">
     </div>
     <div class="form-group">
       <label for="streelight">Is there a streetlight?</label>
-      <input type="text" name="streetlight" class="form-control" id="streetlight" placeholder="{{streetlight}}">
+      <input type="text" name="streetlight" class="form-control" id="streetlight" value="{{home.streetlight}}">
     </div>
     <button type="submit" class="btn btn-primary"> Edit this House</button>
   </form>

@@ -15,14 +15,18 @@ const housesController = {
     },
     show: (req, res) => {
         const neighborhoodsId = req.params.neighborhoodsId
-        Neighborhoods.findById(neighborhoodsId).populate(`houses`)
-        const housesId = req.params.housesId
-        Houses.findById(housesId)
-            .then(houses => {
-                res.render('houses/show', {
-                    houses: houses,
+
+        Neighborhoods.findById(neighborhoodsId).populate(`houses`).then((neighborhood) => {
+            const housesId = req.params.housesId
+            // console.log(housesId)
+            Houses.findById(housesId)
+                .then(houses => {
+                    res.render('houses/show', {
+                        houses: houses,
+                        neighborhood: neighborhood
+                    })
                 })
-            })
+        })
     },
     create: (req, res) => {
         const neighborhoodsId = req.params.neighborhoodsId
@@ -40,10 +44,11 @@ const housesController = {
     },
     delete: (req, res) => {
         const neighborhoodsId = req.params.neighborhoodsId
+        console.log(neighborhoodsId)
         const housesId = req.params.housesId
         Houses.findByIdAndDelete(housesId)
             .then(() => {
-                res.redirect(`/neighborhoods/${neighborhoodsId}`)
+                res.redirect(`/neighborhoods`)
             })
     },
     update: (req, res) => {
@@ -51,7 +56,7 @@ const housesController = {
         const housesId = req.params.housesId
         Houses.findByIdAndUpdate(housesId, req.body)
             .then(neighborhoods => {
-                res.redirect(`/neighborhoods/${neighborhoodsId}/houses/${housesId}`)
+                res.redirect(`/neighborhoods/${neighborhoodsId}/houses/${neighborhoods._id}`)
             })
     },
     new: (req, res) => {
@@ -66,8 +71,18 @@ const housesController = {
             })
     },
     edit: (req, res) => {
-        res.render(`houses/edit`)
+        console.log(req.params)
+        Neighborhoods.findById(req.params.neighborhoodsId).then(neighborhoods => {
+            Houses.findById(req.params.housesId).then((home) => {
+                res.render(`houses/edit`, {
+                    neighborhoods: neighborhoods,
+                    home: home
+                })
+            })
+        })
     }
 }
+
+
 
 module.exports = housesController
