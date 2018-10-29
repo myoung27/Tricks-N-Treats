@@ -1,10 +1,13 @@
-<h1>{{address}</h1>
+<h1>{{houses.address}}</h1>
 <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="..." alt="Card image cap">
     <div class="card-body">
-        <h5>{{candy}}</h5>
-        <h5>{{streetlight}}</h5>
-        <a href="#" class="btn btn-primary">Edit this House</a>
+        <h5 class="card-title"> Does this house give out candy:<br> {{houses.candy}}</h5>
+        <h5 class="card-title">Are there streetlights:<br> {{houses.streetlight}}</h5>
         <a href="/neighborhoods/{{_id}}/houses" class="btn btn-primary">Return to the Houses</a>
+        <br>
+        <a href="#" class="btn btn-primary">Delete this House</a>
+        <br>
+        <a href="#" class="btn btn-primary">Edit this House</a>
     </div>
 </div>

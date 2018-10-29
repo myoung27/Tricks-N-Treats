@@ -1,0 +1,9 @@
+<div>
+    {{houses}}
+    <form action="/neighborhoods/{{houses._id}}/houses" method="POST" class="auth-form">
+        <input type="address" name="address" placeholder="Address">
+        <input type="candy" name="candy" placeholder="Candy">
+        <input type="streetlight" name="streetlight" placeholder="Streetlight">
+        <input type="submit" value="Create this House" class="btn">
+    </form>
+</div>

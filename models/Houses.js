@@ -3,8 +3,8 @@ const Schema = mongoose.Schema
 
 const Houses = new Schema({
     address: String,
-    candy: Boolean,
-    streetlight: Boolean
+    candy: String,
+    streetlight: String
 })
 
 module.exports = mongoose.model('Houses', Houses)

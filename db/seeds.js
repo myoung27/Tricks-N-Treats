@@ -4,38 +4,38 @@ const mongoose = require('./connections')
 
 const l5p1 = new Houses({
     address: "123 Sesame St. NE",
-    candy: true,
-    streetlight: true
+    candy: "Yes",
+    streetlight: "Yes"
 })
 
 const l5p2 = new Houses({
     address: "2424  Freddy Kruger Bld.",
-    candy: false,
-    streetlight: false
+    candy: "No",
+    streetlight: "No"
 })
 
 const o4w1 = new Houses({
     address: "6897 Sunshine Lane",
-    candy: true,
-    streetlight: true
+    candy: "Yes",
+    streetlight: "Yes"
 })
 
 const o4w2 = new Houses({
     address: "4321 Halaburton Way",
-    candy: false,
-    streetlight: true
+    candy: "No",
+    streetlight: "Yes"
 })
 
 const inp1 = new Houses({
     address: "35 King James Rd",
-    candy: true,
-    streetlight: true
+    candy: "Yes",
+    streetlight: "Yes"
 })
 
 const inp2 = new Houses({
     address: "9038 Tasty Duck St.",
-    candy: false,
-    streetlight: true
+    candy: "No",
+    streetlight: "Yes"
 })
 
 
