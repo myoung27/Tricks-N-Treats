@@ -12,10 +12,11 @@ const neighborhoodsController = {
     show: (req, res) => {
         const neighborhoodsId = req.params.neighborhoodsId
         Neighborhoods.findById(neighborhoodsId).populate(`houses`)
-            .then((single) => {console.log(single)
+            .then((single) => {
+                console.log(single)
                 res.render('neighborhoods/show', {
                     single: single
-                    
+
                 })
             })
     },
@@ -40,7 +41,7 @@ const neighborhoodsController = {
             })
     },
     new: (req, res) => {
-        res.send(`Hello from Stores New route`)
+        res.render(`neighborhoods/new`)
     },
     edit: (req, res) => {
         res.send(`Hellow from Stores Edit route`)

@@ -18,7 +18,7 @@ router.get('/neighborhoods/:neighborhoodsId/houses/:housesId', housesController.
 router.get('/neighborhoods/:neighborhoodsId/houses/:housesId/edit', housesController.edit)
 
 //create routes
-//router.post('/neighborhoods', neighborhoodsController.create)
+router.post('/neighborhoods', neighborhoodsController.create)
 
 
 //delete routes 
