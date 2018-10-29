@@ -8,7 +8,8 @@ const housesController = {
             .then(neighborhoods => {
                 const houses = neighborhoods.houses
                 res.render('houses/index', {
-                    houses: houses
+                    houses: houses,
+                    neighborhoods: neighborhoods
                 })
             })
     },
@@ -17,7 +18,7 @@ const housesController = {
         Houses.findById(housesId)
             .then(houses => {
                 res.render('houses/show', {
-                    houses: houses
+                    houses: houses,
                 })
             })
     },
@@ -30,7 +31,10 @@ const housesController = {
                     .then(newHouse => {
                         houses.push(newHouse)
                         neighborhoods.save()
-                        res.redirect(`/neighborhoods/${neighborhoodsId}/houses/`)
+                        res.redirect(`/neighborhoods/${neighborhoodsId}/houses/`, {
+                            houses: houses,
+                            neighborhoods: neighborhoods
+                        })
                     })
 
             })
@@ -52,7 +56,15 @@ const housesController = {
             })
     },
     new: (req, res) => {
-        res.render(`houses/new`)
+        const neighborhoodsId = req.params.neighborhoodsId
+        Neighborhoods.findById(neighborhoodsId).populate(`houses`)
+            .then(neighborhoods => {
+                const houses = neighborhoods.houses
+                res.render('houses/new', {
+                    neighborhoods: neighborhoods,
+                    houses: houses
+                })
+            })
     },
     edit: (req, res) => {
         res.render(`houses/edit`)

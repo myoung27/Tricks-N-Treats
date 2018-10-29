@@ -1,9 +1,23 @@
-<div>
-    {{houses}}
-    <form action="/neighborhoods/{{id}}/houses" method="POST" class="auth-form">
+<form>
+    <action="/neighborhoods/{{neighborhoods.id}}/houses" ?_method="PATCH" method="POST">
         <input type="address" name="address" placeholder="Address">
         <input type="candy" name="candy" placeholder="Candy">
         <input type="streetlight" name="streetlight" placeholder="Streetlight">
-        <input type="submit" value="Create this House" class="btn">
-    </form>
-</div>
+        <a href="/neighborhoods/{{neighborhoods.id}}/houses"><button type="submit">Create this House</button></a>
+</form>
+<form>
+    <div class="form-group">
+        <label for="address">House Address</label>
+        <input type="address" class="form-control" id="address" placeholder="Enter Address">
+
+    </div>
+    <div class="form-group">
+        <label for="candy">Does this house give out candy?</label>
+        <input type="candy" class="form-control" id="candy" placeholder="Does this house give out candy?">
+    </div>
+    <div class="form-group">
+        <label for="streelight">Is there a streetlight?</label>
+        <input type="streetlight" class="form-control" id="candy" placeholder="Is there a streetlight?">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

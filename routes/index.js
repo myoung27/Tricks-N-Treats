@@ -5,7 +5,7 @@ const neighborhoodsController = require('../controllers/neighborhoods')
 const housesController = require('../controllers/houses')
 
 
-//read routes 
+//routes for reading
 router.get('/', userController.index)
 router.get('/neighborhoods', neighborhoodsController.index)
 router.get('/neighborhoods/new', neighborhoodsController.new)
