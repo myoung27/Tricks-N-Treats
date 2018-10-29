@@ -52,12 +52,10 @@ const housesController = {
             })
     },
     new: (req, res) => {
-        res.render(`houses/new`, {
-            houses: houses
-        })
+        res.render(`houses/new`)
     },
     edit: (req, res) => {
-        res.send(`Hello from Houses Edit route`)
+        res.render(`houses/edit`)
     }
 }
 
