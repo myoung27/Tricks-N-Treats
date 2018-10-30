@@ -21,21 +21,37 @@ p {
   justify-content: space-around;
   opacity: .5;
 }
+
 .card:hover {
   opacity: 1.0;
 }
-a{
+
+a {
   opacity: 1;
 }
+
 .card-body {
   display: inline-block;
   justify-content: space-around;
 }
-h5{
-  color:orange;
+
+h5 {
+  color: orange;
   text-align: center;
-  
+
 }
-h7{
+
+h7 {
   text-align: center;
+}
+.wrapper{
+  display: inline-flex;
+}
+.image {
+  display: inline-block;
+  height: auto;
+  width: auto;
+  max-width: 900px;
+  max-height: 900px;
+  margin: 30px 5px 100px 60px;
 }
