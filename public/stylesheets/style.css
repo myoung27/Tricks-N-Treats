@@ -2,4 +2,7 @@ body{
   background-color: black;
   background-image: url(../images/TrickorTreat.jpeg);
 }
-
+h1{
+  text-align: center;
+  
+}

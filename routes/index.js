@@ -3,12 +3,13 @@ const router = express.Router()
 const userController = require('../controllers/users')
 const neighborhoodsController = require('../controllers/neighborhoods')
 const housesController = require('../controllers/houses')
-
+const appController = require('../controllers/app')
 
 //routes for reading
-router.get('/', userController.index)
+router.get('/', appController.index)
 router.get('/neighborhoods', neighborhoodsController.index)
 router.get('/neighborhoods/new', neighborhoodsController.new)
+router.get('/users/new', userController.new)
 router.get('/neighborhoods/:neighborhoodsId/edit', neighborhoodsController.edit)
 router.get('/neighborhoods/:neighborhoodsId', neighborhoodsController.show)
 router.get('/neighborhoods/:neighborhoodsId/houses', housesController.index)
@@ -19,6 +20,8 @@ router.get('/neighborhoods/:neighborhoodsId/houses/:housesId/edit', housesContro
 
 //create routes
 router.post('/neighborhoods', neighborhoodsController.create)
+router.post('/users', userController.create )
+
 
 
 //delete routes 
