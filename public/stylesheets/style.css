@@ -1,8 +1,41 @@
-body{
+body {
   background-color: black;
-  background-image: url(../images/TrickorTreat.jpeg);
+  background-image: url(../images/happyPumpkins.jpeg);
 }
-h1{
+
+h1,
+h2,
+label,
+p {
+  text-align: center;
+  color: white;
+}
+
+.user-container-show {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  display: inline-block;
+  justify-content: space-around;
+  opacity: .5;
+}
+.card:hover {
+  opacity: 1.0;
+}
+a{
+  opacity: 1;
+}
+.card-body {
+  display: inline-block;
+  justify-content: space-around;
+}
+h5{
+  color:orange;
   text-align: center;
   
+}
+h7{
+  text-align: center;
 }

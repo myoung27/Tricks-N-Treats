@@ -1,15 +1,15 @@
-const neighborhoods = require("../models/Neighborhoods");
-const houses = require("../models/Houses");
-const user = require("../models/Users");
+const Users = require("../models/Users");
 
 const usersController = {
   new: (req, res) => {
-    res.render(`user/new`)
+    res.render(`users/new`)
   },
   create: (req, res) => {
     Users.create(req.body)
-        .then(() => {
-            res.redirect(`/neighborhoods`)
+        .then((uu) => {
+            res.render(`users/index`,{
+              uu:uu
+            })
         })
 }
 }

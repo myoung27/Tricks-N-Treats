@@ -9,8 +9,7 @@
 </div>
 {{/each}}
 
-<a href="/neighborhoods/{{neighborhoods.id}}/houses/new"><button type="button" class="btn btn-warning">Create A New
-        House</button></a>
+<a href="/neighborhoods/{{neighborhoods.id}}/houses/new"><button type="button" class="btn btn-warning">Create A New House</button></a>
 
-<form action="/neighborhoods/{{houses.id}}/?_method=DELETE" method="POST"><button class='btn btn-warning' type="submit">
+<form action="/neighborhoods/{{neighborhoods.id}}?_method=DELETE" method="POST"><button class='btn btn-warning fixed bottom' type="submit">
         Delete this Neighborhood</button></form>

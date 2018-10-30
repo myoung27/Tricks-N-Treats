@@ -70,7 +70,6 @@ const housesController = {
             })
     },
     edit: (req, res) => {
-        console.log(req.params)
         Neighborhoods.findById(req.params.neighborhoodsId).then(neighborhoods => {
             Houses.findById(req.params.housesId).then((home) => {
                 res.render(`houses/edit`, {
