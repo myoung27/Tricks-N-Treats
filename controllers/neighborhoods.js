@@ -27,8 +27,8 @@ const neighborhoodsController = {
             })
     },
     delete: (req, res) => {
-        const neighborhoodsId = req.params.neighborhoodsId
-        Neighborhoods.findByIdAndDelete(neighborhoodsId)
+        const neighborhoods = req.params.neighborhoodsId
+        Neighborhoods.findByIdAndDelete(neighborhoods)
             .then(() => {
                 res.redirect(`/neighborhoods`)
             })

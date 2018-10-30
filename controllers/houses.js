@@ -44,7 +44,6 @@ const housesController = {
     },
     delete: (req, res) => {
         const neighborhoodsId = req.params.neighborhoodsId
-        console.log(neighborhoodsId)
         const housesId = req.params.housesId
         Houses.findByIdAndDelete(housesId)
             .then(() => {
