@@ -1,7 +1,6 @@
-<h1>Review a House</h1>
-
+<h1>Review A House</h1>
+  {{#each houses}}
 <div class="card" style="width: 18rem;">
-    {{#each houses}}
     <div class="card-body">
         <h5 class="card-title">{{address}}</h5>
         <a href="/neighborhoods/{{_id}}/houses/{{_id}}" class="btn btn-warning">See this House</a>
