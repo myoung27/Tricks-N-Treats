@@ -17,7 +17,7 @@ Every year, thousands of kids go Trick-or-Treating. As the years progress, peopl
 [My Framework](https://www.figma.com/file/ZibUZv37BiOXL1itDsIFR8KX/TricksNTreats?node-id=0%3A1)
 
 ##ERD
-![ERD](images/ERD.png)
+![ERD](public/images/ERD.png)
 
 ## Future Developments
 
