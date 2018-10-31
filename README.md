@@ -8,15 +8,22 @@ Every year, thousands of kids go Trick-or-Treating. As the years progress, peopl
 
 [Trick-N-Treats](https://evening-taiga-12720.herokuapp.com/)
 
+## Technologies Used
+
+- Languages - HTML5, CSS3, Javascript, Node.js, MongoDB, Mongoose,Express, Handlebars
+- Design - Google Fonts, Bootstrap
+- Coded in VS Code
+
 ## User Stories and Implementation
 
 - My [Trello](https://trello.com/b/H4uyuFSz/tricks-n-treatz)
+
 
 ## Wireframe
 
 [My Framework](https://www.figma.com/file/ZibUZv37BiOXL1itDsIFR8KX/TricksNTreats?node-id=0%3A1)
 
-### ERD
+## ERD
 ![ERD](public/images/ERD.png)
 
 ## Future Developments
